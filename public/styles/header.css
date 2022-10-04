@@ -1,0 +1,19 @@
+.user-header {
+  height: 480px;
+  width: 100%;
+  padding-top: 120px;
+  text-align: center;
+  background-color: gray;
+  background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+#user-pfp {
+  padding-top: 1em;
+}
+
+#user-name {
+  color: white;
+  font-family: "Bungee", cursive;
+  margin-top: -1em;
+}

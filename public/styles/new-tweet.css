@@ -1,0 +1,34 @@
+.new-tweet {
+  display: flex;
+  justify-content: center;
+}
+
+#tweet-button {
+  background-color:#4056A1;
+  font-family: "Bungee", cursive;
+  color: white;
+}
+
+.tweet-text {
+  resize: none;
+  overflow: hidden;
+  width: 100%;
+  background-color: #f4f1ec;
+  outline: none;
+  border:none;
+  border-bottom: 5px solid rgb(27, 27, 27);
+}
+
+.tweet-text::placeholder {
+  font-weight: bold;
+}
+
+.submit-area {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", cursive;
+}
+
+form {
+  width: 50%
+}
