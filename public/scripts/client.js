@@ -37,7 +37,7 @@ const createTweetElement = function(tweet) {
 
 // append tweets returned by createTweetElement()
 const renderTweets = function(tweets) {
-  console.log("rendertweet called")
+  // loop through tweet database and convert them into article elements
   for (const tweet of tweets) {
     $('.tweets').prepend(createTweetElement(tweet));
   }
@@ -45,7 +45,7 @@ const renderTweets = function(tweets) {
 
 // loadTweets from json
 const loadTweets = function() {
-  console.log("loadTweet called");
+  // get tweets from /tweets and render using renderTweets()
    $.get("/tweets", (data) => {
     console.log("printing data", data);
     renderTweets(data);
@@ -95,13 +95,14 @@ $(document).ready(() => {
   // disables/enables submit button based on character count
   $(document).on('input', '.tweet-text', checkTextArea);
 
-
+  // form submit
   $("form").submit(function (e) { 
     e.preventDefault();
 
+    // serialize data from textarea
     const $tweetContent = $('form').serialize();
-    console.log($tweetContent)
 
+    // POST request to /tweets, then call loadTweets() on success
     $.post('/tweets', $tweetContent, (data) => {
       console.log('success')
       loadTweets();
