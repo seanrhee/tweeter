@@ -24,12 +24,13 @@
 
 
     <!-- External JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <script type="text/javascript" src="/scripts/tweets.js"></script>
+    <!-- <script type="text/javascript" src="/scripts/tweets.js" defer></script> -->
 
   </head>
 
@@ -43,6 +44,7 @@
       </div>
     </nav>
 
+    <!-- User Header with pfp and name -->
     <header class="user-header">
       <div id="user-pfp">
         <img src="./images/profile-hex.png" alt="">
@@ -55,42 +57,20 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <br>
+      <!-- New Tweet Form -->
       <section class="new-tweet">
         <form action="/tweets/" method="POST">
           <textarea name="text" class="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="submit-area">
-            <button class="bttn-simple bttn-md bttn-primary" id="tweet-button" type="submit">Tweet</button>
+            <button class="bttn-simple bttn-md bttn-primary" id="tweet-button" type="submit" disabled>Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
       <br>
-      <section class="tweets">
-        <article class="tweet-container">
-          <header>
-            <div class="tweet-header-left">
-              <img src="https://via.placeholder.com/60" alt="" class="pfp">
-              <h5>Name Here</h5>
-            </div>
-            <div class="tweet-header-right">
-              <h5>@Example</h5>
-            </div>
-          </header>
-          <div class="tweet-body-container">
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-          </div>
-          <footer>
-            <div class="tweet-date">
-              <p>Now</p>
-            </div>
-            <div class="tweet-icons">
-              <i class="fa-solid fa-comment-dots fa-sm"></i>
-              <i class="fa-solid fa-retweet fa-sm"></i>
-              <i class="fa-solid fa-heart fa-sm"></i>
-              <i class="fa-solid fa-flag fa-sm"></i>
-            </div>
-          </footer>
-        </article>
+      <!-- Tweets Section -->
+      <section class="tweets" id="here-be-tweets">
+        <!-- Tweets will go here rendered from client.js -->
       </section>
     </main>
   </body>

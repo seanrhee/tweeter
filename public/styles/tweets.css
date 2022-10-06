@@ -25,6 +25,7 @@
 
 .tweet-header-left h5 {
   padding-left: 0.5em;
+  text-align: left;
 }
 
 .tweet-header-right {
@@ -34,6 +35,7 @@
 
 .tweet-header-right h5 {
   color: gray;
+  text-align: right;
 }
 
 .tweet-body-container {

@@ -4,9 +4,10 @@
 }
 
 #tweet-button {
-  background-color:#4056A1;
+  background-color:gray;
   font-family: "Bungee", cursive;
   color: white;
+  order: 3;
 }
 
 .tweet-text {
@@ -26,7 +27,14 @@
 .submit-area {
   display: flex;
   justify-content: space-between;
+}
+
+.counter {
   font-family: "Bungee", cursive;
+}
+
+.error {
+  color: red;
 }
 
 form {
