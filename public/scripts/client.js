@@ -3,6 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const escapeFx = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
 
 // convert JSON info into HTML
 const createTweetElement = function(tweet) {
@@ -17,7 +22,7 @@ const createTweetElement = function(tweet) {
       </div>
     </header>
     <div class="tweet-body-container">
-      <p>${tweet.content.text}</p>
+      <p>${escapeFx(tweet.content.text)}</p>
     </div>
     <footer>
       <div class="tweet-date">
