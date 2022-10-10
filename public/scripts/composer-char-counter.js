@@ -24,11 +24,10 @@ $(document).ready(function() {
     }
 
     // appending an error message when character count hits over 140
-    if (counter < 0 && !$('.error').length) {
-      const $error = $('<span class="error">Tweet is too long.</span>')
-      $('.submit-area').append($error);
-    } else if (counter >= 0 && $('.error').length) {
-      $('.error').remove();
+    if (counter < 0) {
+      $('.tweet-error').slideDown();
+    } else if (counter >= 0) {
+      $('.tweet-error').slideUp();
     }
   });
 })

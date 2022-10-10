@@ -56,9 +56,11 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <br>
       <!-- New Tweet Form -->
       <section class="new-tweet">
+        <header class="tweet-error" hidden>
+          <p>Tweet is too long. The maximum length of a tweet is 140 characters.</p>
+        </header>
         <form action="/tweets/" method="POST">
           <textarea name="text" class="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="submit-area">

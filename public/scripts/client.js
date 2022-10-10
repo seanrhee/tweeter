@@ -104,6 +104,10 @@ $(document).ready(() => {
   $("form").submit(function (e) { 
     e.preventDefault();
 
+    if (Number($('.counter').val())>140) {
+      $('.tweet-error').removeAttr('hidden');
+    }
+
     // serialize data from textarea
     const $tweetContent = $('form').serialize();
 
