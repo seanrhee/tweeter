@@ -37,6 +37,8 @@ const createTweetElement = function(tweet) {
     </footer>
   </article>`);
 
+  console.log(`${$tweet} has been created`)
+
   return $tweet;
 };
 
@@ -45,33 +47,17 @@ const renderTweets = function(tweets) {
   // loop through tweet database and convert them into article elements
   for (const tweet of tweets) {
     $('.tweets').prepend(createTweetElement(tweet));
+    console.log(`${tweet} has been prepended`)
   }
 };
 
 // loadTweets from json
 const loadTweets = function() {
+  console.log("loadTweets called")
   // get tweets from /tweets and render using renderTweets()
    $.get("/tweets", (data) => {
     console.log("printing data", data);
     renderTweets(data);
-
-    // reset form
-    $('.tweet-text').val('');
-    $('.counter').html('140');
-    $('#tweet-button').prop('disabled', true);
-    $('#tweet-button').removeAttr('style');
-    $("textarea").on('input', function () {
-      this.style.height = 'auto';
-                
-      this.style.height =  (this.scrollHeight + 5) + 'px';
-    });
-    // end reset form
-
-    // load tweets.js for css hover effects
-    const script = document.createElement('script');
-    script.src = '/scripts/tweets.js';
-    script.type = 'text/javascript';
-    document.getElementsByTagName('head')[0].appendChild(script);
   })
 };
 
@@ -92,11 +78,11 @@ const checkTextArea = () => {
 };
 
 // load tweets on page load
+console.log("page load")
 loadTweets();
 
 // document ready
 $(document).ready(() => {
-
   // disables/enables submit button based on character count
   $(document).on('input', '.tweet-text', checkTextArea);
 
@@ -114,6 +100,19 @@ $(document).ready(() => {
     // POST request to /tweets, then call loadTweets() on success
     $.post('/tweets', $tweetContent, (data) => {
       console.log('success')
+
+          // reset form
+    $('.tweet-text').val('');
+    $('.counter').html('140');
+    $('#tweet-button').prop('disabled', true);
+    $('#tweet-button').removeAttr('style');
+    $("textarea").on('input', function () {
+      this.style.height = 'auto';
+                
+      this.style.height =  (this.scrollHeight + 5) + 'px';
+    });
+    // end reset form
+
       loadTweets();
     })
   });

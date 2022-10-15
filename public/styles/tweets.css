@@ -67,3 +67,25 @@
 .tweet-icons {
   margin-top: 0.1em;
 }
+
+/* hover effects */
+
+.tweet-container:hover {
+  box-shadow: 5px 5px gray;
+}
+
+.fa-comment-dots:hover {
+  color: steelblue;
+}
+
+.fa-retweet:hover {
+  color: limegreen;
+}
+
+.fa-heart:hover {
+  color: red;
+}
+
+.fa-flag:hover {
+  color: gold;
+}
