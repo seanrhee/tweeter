@@ -19,5 +19,5 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## Screenshots
 
-!["Responsive Design in action"](./docs/responsive.webm)
-!["Character counter"](./docs/charactercounter.webm)
+!["Responsive Design in action"](./docs/responsive.gif)
+!["Character counter"](./docs/charactercounter.gif)
