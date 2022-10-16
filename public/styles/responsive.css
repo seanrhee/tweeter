@@ -1,9 +1,22 @@
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   body {
     display: flex;
   }
   .user-header {
     width: 50%;
+    background-image: none;
+    background-color: #f4f1ec;
+  }
+  .fixed {
+    position: fixed;
+    height: 38vh;
+    width: 30%;
+    /* padding-top: 120px; */
+    margin-left: 3vw;
+    margin-top: 3vh;
+    text-align: center;
+    background-color: gray;
+    background-image: url("https://www.transparenttextures.com/patterns/3px-tile.png");
   }
   .tweet-container {
     width: 100%;
@@ -18,8 +31,41 @@
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  body {
+@media only screen and (max-width: 1023px) {
+  nav {
+    background-color: transparent;
+    height: 10vh;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  nav {
+    height: 5vh;
+  }
+
+  .logo {
+    font-size: 3vh;
+  }
+
+  .right-side-nav {
+    width: 33vw;
+    text-align: right;
+    font-size: 3vh;
+    padding-left: 20px;
+    margin-top: 0px;
     display: block;
+  }
+
+  .write-new {
+    display: none;
+  }
+
+  .user-header {
+    padding-top: 5vh;
+    height: 30vh;
+  }
+
+  #user-pfp img {
+    height: 15vh;
   }
 }

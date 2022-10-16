@@ -54,6 +54,11 @@ const renderTweets = function(tweets) {
 // loadTweets from json
 const loadTweets = function() {
   console.log("loadTweets called")
+
+  // clear old tweets to prepare for data load
+  // BUG: without this line, all tweets get prepended to the tweets that are already there.
+  $('.tweet-container').remove()
+  
   // get tweets from /tweets and render using renderTweets()
    $.get("/tweets", (data) => {
     console.log("printing data", data);
