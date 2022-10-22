@@ -85,10 +85,7 @@ const loadLatestTweet = function() {
 const checkTextArea = () => {
   const $textarea = $('.tweet-text');
 
-  if ($textarea.val() === '') {
-    $('#tweet-button').prop('disabled', true);
-    $('#tweet-button').removeAttr('style');
-  } else if($textarea.val().length > 140) {
+  if($textarea.val().length > 140) {
     $('#tweet-button').prop('disabled', true);
     $('#tweet-button').removeAttr('style');
   } else {
@@ -110,8 +107,10 @@ $(document).ready(() => {
   $("form").submit(function (e) { 
     e.preventDefault();
 
-    if (Number($('.counter').val())>140) {
-      $('.tweet-error').removeAttr('hidden');
+    // check for empty tweet and display an error
+    if (Number($('.counter').val()) === 140) {
+      $('#empty').slideDown().fadeOut(1000);
+      return;
     }
 
     // serialize data from textarea
@@ -124,8 +123,7 @@ $(document).ready(() => {
           // reset form
     $('.tweet-text').val('');
     $('.counter').html('140');
-    $('#tweet-button').prop('disabled', true);
-    $('#tweet-button').removeAttr('style');
+    // $('#tweet-button').removeAttr('style');
     $("textarea").on('input', function () {
       this.style.height = 'auto';
                 

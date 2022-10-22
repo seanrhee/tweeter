@@ -25,9 +25,9 @@ $(document).ready(function() {
 
     // appending an error message when character count hits over 140
     if (counter < 0) {
-      $('.tweet-error').slideDown();
+      $('#too-long').slideDown();
     } else if (counter >= 0) {
-      $('.tweet-error').slideUp();
+      $('#too-long').slideUp();
     }
   });
 })
