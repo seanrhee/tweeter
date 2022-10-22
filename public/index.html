@@ -60,14 +60,17 @@
     <main class="container">
       <!-- New Tweet Form -->
       <section class="new-tweet">
-        <header class="tweet-error" hidden>
+        <header class="tweet-error-too-long" hidden>
+          <p>Tweet is too long. The maximum length of a tweet is 140 characters.</p>
+        </header>
+        <header class="tweet-error-empty" hidden>
           <p>Tweet is too long. The maximum length of a tweet is 140 characters.</p>
         </header>
         <form action="/tweets/" method="POST">
           <textarea name="text" class="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="submit-area">
-            <button class="bttn-simple bttn-md bttn-primary" id="tweet-button" type="submit" disabled>Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
+            <button class="bttn-simple bttn-md bttn-primary" id="tweet-button" type="submit" disabled>Tweet</button>
           </div>
         </form>
       </section>

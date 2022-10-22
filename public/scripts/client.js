@@ -43,6 +43,14 @@ const createTweetElement = function(tweet) {
 };
 
 // append tweets returned by createTweetElement()
+const renderLatestTweet = function(tweets) {
+  const latestTweet = tweets[tweets.length - 1]
+  // loop through tweet database and convert them into article elements
+  $('.tweets').prepend(createTweetElement(latestTweet));
+  console.log(`${latestTweet} has been prepended`)
+};
+
+// append tweets returned by createTweetElement()
 const renderTweets = function(tweets) {
   // loop through tweet database and convert them into article elements
   for (const tweet of tweets) {
@@ -54,15 +62,22 @@ const renderTweets = function(tweets) {
 // loadTweets from json
 const loadTweets = function() {
   console.log("loadTweets called")
-
-  // clear old tweets to prepare for data load
-  // BUG: without this line, all tweets get prepended to the tweets that are already there.
-  $('.tweet-container').remove()
   
   // get tweets from /tweets and render using renderTweets()
    $.get("/tweets", (data) => {
     console.log("printing data", data);
     renderTweets(data);
+  })
+};
+
+// loadTweets from json
+const loadLatestTweet = function() {
+  console.log("loadLatestTweet called")
+  
+  // get tweets from /tweets and render using renderTweets()
+   $.get("/tweets", (data) => {
+    console.log("printing data", data);
+    renderLatestTweet(data);
   })
 };
 
@@ -118,7 +133,7 @@ $(document).ready(() => {
     });
     // end reset form
 
-      loadTweets();
+      loadLatestTweet();
     })
   });
 });
